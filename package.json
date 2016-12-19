@@ -1,0 +1,23 @@
+{
+  "name": "dynamigrate",
+  "version": "1.0.0",
+  "description": "wrapper for AWS DynamoDB ",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/dynamigrate/test.js"
+  },
+  "keywords": [
+    "dynamodb"
+  ],
+  "author": "jacoyutorius",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.7.15"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
