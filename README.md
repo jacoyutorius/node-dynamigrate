@@ -26,12 +26,35 @@ DynamoDBより指定したテーブルを削除する.
 
 ## Test
 
+テストを実行するには事前にdynamodb-localの環境を作成する必要があります。
+
+### dockerでdynamodb-localを起動する場合
+
+[deangiberson/aws-dynamodb-local](https://hub.docker.com/r/deangiberson/aws-dynamodb-local/) をDockerで起動。
+test.jsに記載されているendpointを以下のように変更。
+
+**test.js**
+
+```js
+var awsParams = {
+	accessKeyId: accessKeyId,
+	secretKeyId: secretKeyId,
+	region: region,
+	endpoint: "http://192.168.99.100:32779" //起動したDockerイメージのURL
+};
+```
+
+
 setup your AWS keys and start [DynamoDB local](https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/DynamoDBLocal.html#DynamoDBLocal.DownloadingAndRunning).
+
+**AWSアクセスキーの設定**
 
 ```
 export AWS_ACCESS_KEY=YOUR_AWS_ACCECSS_KEY
 export AWS_ACCESS_SECRET=YOUR_AWS_ACCESS_SECRET
 ```
+
+**テストの実行**
 
 ```bash
 npm run test
@@ -49,4 +72,5 @@ npm run test
   4 passing (612ms)
 
 ```
+
 
